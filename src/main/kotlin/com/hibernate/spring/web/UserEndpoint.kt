@@ -16,7 +16,7 @@ class UserEndpoint(userServiceImpl: UserService) {
     }
 
     @GetMapping("/api/users")
-    fun getAllUsers(): User {
+    fun getAllUsers(): List<User> {
         return userService.getAllUsers()
     }
 }

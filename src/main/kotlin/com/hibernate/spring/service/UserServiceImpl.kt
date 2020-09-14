@@ -1,15 +1,18 @@
 package com.hibernate.spring.service
 
 import com.hibernate.spring.domain.User
+import com.hibernate.spring.repository.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
-class UserServiceImpl: UserService{
+class UserServiceImpl(
+        private val userRepository: UserRepository) : UserService{
+
     override fun addUser(user: User) {
-        TODO("Not yet implemented")
+        userRepository.save(user)
     }
 
-    override fun getAllUsers(): User {
-        TODO("Not yet implemented")
+    override fun getAllUsers(): List<User> {
+        return userRepository.findAll()
     }
 }
