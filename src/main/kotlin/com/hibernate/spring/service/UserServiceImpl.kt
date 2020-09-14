@@ -8,4 +8,8 @@ class UserServiceImpl: UserService{
     override fun addUser(user: User) {
         TODO("Not yet implemented")
     }
+
+    override fun getAllUsers(): User {
+        TODO("Not yet implemented")
+    }
 }

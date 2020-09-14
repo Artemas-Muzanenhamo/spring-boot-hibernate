@@ -4,4 +4,5 @@ import com.hibernate.spring.domain.User
 
 interface UserService {
     fun addUser(user: User)
+    fun getAllUsers(): User
 }
