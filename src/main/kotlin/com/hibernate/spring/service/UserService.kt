@@ -1,8 +1,8 @@
 package com.hibernate.spring.service
 
-import com.hibernate.spring.domain.User
+import com.hibernate.spring.domain.UserEntity
 
 interface UserService {
-    fun addUser(user: User)
-    fun getAllUsers(): List<User>
+    fun addUser(userEntity: UserEntity)
+    fun getAllUsers(): List<UserEntity>
 }

@@ -1,6 +1,6 @@
 package com.hibernate.spring.service
 
-import com.hibernate.spring.domain.User
+import com.hibernate.spring.domain.UserEntity
 import com.hibernate.spring.repository.UserRepository
 import org.springframework.stereotype.Service
 
@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service
 class UserServiceImpl(
         private val userRepository: UserRepository) : UserService{
 
-    override fun addUser(user: User) {
-        userRepository.save(user)
+    override fun addUser(userEntity: UserEntity) {
+        userRepository.save(userEntity)
     }
 
-    override fun getAllUsers(): List<User> {
+    override fun getAllUsers(): List<UserEntity> {
         return userRepository.findAll()
     }
 }
