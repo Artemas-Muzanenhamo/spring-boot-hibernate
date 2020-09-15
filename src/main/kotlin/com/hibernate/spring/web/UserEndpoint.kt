@@ -1,7 +1,6 @@
 package com.hibernate.spring.web
 
 import com.hibernate.spring.converter.UserConverter
-import com.hibernate.spring.domain.UserEntity
 import com.hibernate.spring.domain.UserJson
 import com.hibernate.spring.service.UserService
 import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
@@ -16,13 +15,13 @@ class UserEndpoint(userServiceImpl: UserService) {
 
     @PostMapping("/api/user")
     fun addUser(@RequestBody user: UserJson) {
-        val userConverter = UserConverter()
-        val userEntity = userConverter.convertToUserEntity(user)
+        val userEntity = UserConverter().convertToUserEntity(user)
         userService.addUser(userEntity)
     }
 
     @GetMapping("/api/users", produces = [APPLICATION_JSON_VALUE])
-    fun getAllUsers(): List<UserEntity> {
+    fun getAllUsers(): List<UserJson> {
         return userService.getAllUsers()
+                .map(UserConverter()::convertToUserJson)
     }
 }

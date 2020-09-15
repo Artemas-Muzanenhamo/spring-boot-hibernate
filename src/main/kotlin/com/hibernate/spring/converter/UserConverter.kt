@@ -12,4 +12,8 @@ class UserConverter {
 
         return UserEntity(userId, userName, userSurname, userDateOfBirth)
     }
+
+    fun convertToUserJson(userEntity: UserEntity): UserJson {
+        return UserJson(userEntity.id, userEntity.name, userEntity.surname, userEntity.dateOfBirth)
+    }
 }
