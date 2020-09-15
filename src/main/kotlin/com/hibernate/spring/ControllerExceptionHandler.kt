@@ -10,7 +10,6 @@ class ControllerExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException::class)
     fun handleUserJsonNotValid(ex: IllegalArgumentException): ResponseEntity<Message> {
-
         val message = ex.localizedMessage
         return ResponseEntity
                 .badRequest()
