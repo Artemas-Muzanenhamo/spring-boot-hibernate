@@ -16,6 +16,14 @@ class ControllerExceptionHandler {
                 .contentType(APPLICATION_JSON)
                 .body(Message(message))
     }
+
+    @ExceptionHandler(NumberFormatException::class)
+    fun handleNumberFormatException(ex: NumberFormatException): ResponseEntity<Message> {
+        return ResponseEntity
+                .badRequest()
+                .contentType(APPLICATION_JSON)
+                .body(Message("The User Id supplied is not valid"))
+    }
 }
 
 data class Message(val message: String)

@@ -15,4 +15,8 @@ class UserServiceImpl(
     override fun getAllUsers(): List<UserEntity> {
         return userRepository.findAll()
     }
+
+    override fun removeUser(userId: Long) {
+        userRepository.deleteById(userId)
+    }
 }
