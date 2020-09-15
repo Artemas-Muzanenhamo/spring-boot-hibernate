@@ -8,8 +8,8 @@ import org.springframework.http.MediaType.APPLICATION_JSON_VALUE
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class UserEndpoint(userServiceImpl: UserService) {
-    private val userService: UserService = userServiceImpl
+class UserEndpoint(
+        private val userService: UserService) {
 
     @PutMapping("/api/users/user", consumes = [APPLICATION_JSON_VALUE])
     @ResponseBody
