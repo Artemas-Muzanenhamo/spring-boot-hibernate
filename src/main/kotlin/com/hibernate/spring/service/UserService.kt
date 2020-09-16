@@ -6,4 +6,5 @@ interface UserService {
     fun addUser(userEntity: UserEntity)
     fun getAllUsers(): List<UserEntity>
     fun removeUser(userId: Long)
+    fun removeAllUsers()
 }

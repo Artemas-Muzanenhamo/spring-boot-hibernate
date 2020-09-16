@@ -32,6 +32,11 @@ class UserEndpoint(
         userService.removeUser(validUserId)
     }
 
+    @DeleteMapping("/api/users")
+    fun removeAllUsers() {
+        userService.removeAllUsers()
+    }
+
     private fun validate(userId: String?): Long {
         return ofNullable(userId)
                 .map(String::toLong)
