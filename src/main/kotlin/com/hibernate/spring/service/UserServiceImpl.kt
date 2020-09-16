@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional
 @Service
 @Transactional
 class UserServiceImpl(
-        private val userRepository: UserRepository) : UserService{
+        private val userRepository: UserRepository) : UserService {
 
     override fun addUser(userEntity: UserEntity) {
         userRepository.save(userEntity)
